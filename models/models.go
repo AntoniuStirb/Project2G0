@@ -1,5 +1,7 @@
 package models
 
+import "net/http"
+
 type Person struct {
 	First   string
 	Last    string
@@ -17,4 +19,8 @@ type PersonInfo struct {
 	FirstLetter  string
 	Persons      []Person
 	TotalRecords int
+}
+
+type Client interface {
+	Get(url string) (*http.Response, error)
 }

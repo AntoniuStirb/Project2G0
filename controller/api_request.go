@@ -7,10 +7,6 @@ import (
 	"net/http"
 )
 
-type Client interface {
-	Get(url string) (*http.Response, error)
-}
-
 // RealClient is the implementation of Client that uses the real http.Get
 type RealClient struct{}
 
@@ -19,18 +15,7 @@ func (c *RealClient) Get(url string) (*http.Response, error) {
 	return http.Get(url)
 }
 
-// FakeClient is a fake implementation of Client for testing
-type FakeClient struct {
-	Response *http.Response
-	Error    error
-}
-
-// Get implements the Client interface
-func (c *FakeClient) Get(url string) (*http.Response, error) {
-	return c.Response, c.Error
-}
-
-func GetData(client RealClient, url string) ([]models.Person, error) {
+func GetData(client models.Client, url string) ([]models.Person, error) {
 	resp, err := client.Get(url)
 	if err != nil {
 		return nil, err
@@ -52,7 +37,7 @@ func GetData(client RealClient, url string) ([]models.Person, error) {
 	return result.Results, nil
 }
 
-func ReadAllRecords(client RealClient, numberOfRecords int, url string) ([]models.Person, error) {
+func ReadAllRecords(client models.Client, numberOfRecords int, url string) ([]models.Person, error) {
 	var persons []models.Person
 	for len(persons) < numberOfRecords {
 		result, err := GetData(client, url)
