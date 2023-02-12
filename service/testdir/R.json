@@ -1,0 +1,22 @@
+{
+  "FirstLetter": "R",
+  "Persons": [
+    {
+      "First": "Raul",
+      "Last": "Lueilwitz",
+      "Email": "redrabbit76@gmail.com",
+      "Address": "1797 Gorczany Drive",
+      "Created": "March 6, 2021",
+      "Balance": "$1,025.28"
+    },
+    {
+      "First": "Rachel",
+      "Last": "Robel",
+      "Email": "greyturtle86@gmail.com",
+      "Address": "71706 Kaya Views",
+      "Created": "December 23, 2017",
+      "Balance": "$5,429.99"
+    }
+  ],
+  "TotalRecords": 2
+}
