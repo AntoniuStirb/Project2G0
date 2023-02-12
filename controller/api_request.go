@@ -40,5 +40,4 @@ func ReadAllRecords(numberOfRecords int, url string) ([]models.Person, error) {
 	}
 	persons = persons[:numberOfRecords]
 	return persons, nil
-
 }
