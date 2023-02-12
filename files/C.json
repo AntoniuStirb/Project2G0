@@ -1,0 +1,86 @@
+{
+  "FirstLetter": "C",
+  "Persons": [
+    {
+      "First": "Cyril",
+      "Last": "Nolan",
+      "Email": "cyanrabbit73@gmail.com",
+      "Address": "57697 Emiliano Mill",
+      "Created": "March 1, 2017",
+      "Balance": "$6,241.87"
+    },
+    {
+      "First": "Caitlyn",
+      "Last": "Reichel",
+      "Email": "Caitlyn.Reichel@lillie.biz",
+      "Address": "662 Pat Road",
+      "Created": "June 18, 2015",
+      "Balance": "$6,275.79"
+    },
+    {
+      "First": "Ceasar",
+      "Last": "Nolan",
+      "Email": "Ceasar.Nolan@eulalia.net",
+      "Address": "93176 Rice Mission",
+      "Created": "November 21, 2016",
+      "Balance": "$8,119.53"
+    },
+    {
+      "First": "Claudine",
+      "Last": "Kuhn",
+      "Email": "Claudine.Kuhn@robin.name",
+      "Address": "510 Stanford Cove",
+      "Created": "December 31, 2014",
+      "Balance": "$6,720.02"
+    },
+    {
+      "First": "Cecilia",
+      "Last": "Witting",
+      "Email": "Cecilia.Witting@kavon.name",
+      "Address": "50623 Tyson Ville",
+      "Created": "March 10, 2020",
+      "Balance": "$7,493.22"
+    },
+    {
+      "First": "Crawford",
+      "Last": "Hills",
+      "Email": "whiterabbit10@gmail.com",
+      "Address": "5599 Vandervort Harbor",
+      "Created": "January 4, 2022",
+      "Balance": "$5,396.55"
+    },
+    {
+      "First": "Clementine",
+      "Last": "Gutmann",
+      "Email": "purplesquirrel01@gmail.com",
+      "Address": "91252 Ali Rue",
+      "Created": "May 4, 2022",
+      "Balance": "$1,593.45"
+    },
+    {
+      "First": "Carol",
+      "Last": "Lebsack",
+      "Email": "indigowolf39@gmail.com",
+      "Address": "4158 Breanna Lakes",
+      "Created": "October 2, 2021",
+      "Balance": "$8,741.39"
+    },
+    {
+      "First": "Crystel",
+      "Last": "Padberg",
+      "Email": "Crystel.Padberg@chester.biz",
+      "Address": "312 Violet Dale",
+      "Created": "October 13, 2014",
+      "Balance": "$4,833.94"
+    },
+    {
+      "First": "Connor",
+      "Last": "Hane",
+      "Email": "Connor.Hane@matilda.net",
+      "Address": "435 Madison Canyon",
+      "Created": "September 18, 2015",
+      "Balance": "$338.42"
+    }
+  ],
+  "TotalRecords": 10
+}

@@ -1,0 +1,38 @@
+{
+  "FirstLetter": "G",
+  "Persons": [
+    {
+      "First": "Gustave",
+      "Last": "Aufderhar",
+      "Email": "Gustave.Aufderhar@vida.net",
+      "Address": "361 D'Amore Run",
+      "Created": "April 5, 2017",
+      "Balance": "$9,308.58"
+    },
+    {
+      "First": "Gia",
+      "Last": "Gorczany",
+      "Email": "whitegiraffe54@gmail.com",
+      "Address": "229 Hammes Avenue",
+      "Created": "January 2, 2015",
+      "Balance": "$2,194.88"
+    },
+    {
+      "First": "Glenda",
+      "Last": "Larson",
+      "Email": "mintgreenwolf85@gmail.com",
+      "Address": "06594 Monahan Highway",
+      "Created": "January 19, 2022",
+      "Balance": "$9,001.97"
+    },
+    {
+      "First": "Guy",
+      "Last": "Hammes",
+      "Email": "Guy.Hammes@dan.biz",
+      "Address": "89424 Rath Vista",
+      "Created": "July 24, 2019",
+      "Balance": "$8,314.52"
+    }
+  ],
+  "TotalRecords": 4
+}

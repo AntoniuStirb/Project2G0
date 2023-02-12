@@ -1,0 +1,14 @@
+{
+  "FirstLetter": "W",
+  "Persons": [
+    {
+      "First": "Wilmer",
+      "Last": "Champlin",
+      "Email": "Wilmer.Champlin@rosalind.biz",
+      "Address": "3149 Veum Light",
+      "Created": "July 12, 2016",
+      "Balance": "$3,418.46"
+    }
+  ],
+  "TotalRecords": 1
+}
