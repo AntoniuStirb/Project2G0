@@ -3,26 +3,23 @@ package controller
 import (
 	"Project2Go/models"
 	"errors"
+	"github.com/google/go-cmp/cmp"
 	"io"
 	"net/http"
-	"reflect"
 	"strings"
 	"testing"
 )
 
-// FakeClient is a fake implementation of Client for testing
 type FakeClient struct {
 	Response *http.Response
 	Error    error
 }
 
-// Get implements the Client interface
-func (c *FakeClient) Get(url string) (*http.Response, error) {
+func (c *FakeClient) Get(string) (*http.Response, error) {
 	return c.Response, c.Error
 }
 
 func TestGetData(t *testing.T) {
-	// fake response for testing
 	fakeResponse := &http.Response{
 		Body: io.NopCloser(strings.NewReader(`{"Results": [{"First": "Stirb", "Last": "Antoniu", "Email": 
 			"stirbantoniu@mail", "Address": "123 str", "Created": "feb2023", "Balance": "100"}]}`)),
@@ -36,34 +33,33 @@ func TestGetData(t *testing.T) {
 		url         string
 	}{
 		{
-			name:   "success scenario",
+			name:   "Successfully request",
 			client: &FakeClient{Response: fakeResponse, Error: nil},
 			expected: []models.Person{{First: "Stirb", Last: "Antoniu", Email: "stirbantoniu@mail",
 				Address: "123 str", Created: "feb2023", Balance: "100"}},
-			url: "good url",
+			url: "fakeUrl1",
 		},
 		{
-			name:        "failure scenario",
+			name:        "Failed request",
 			client:      &FakeClient{Response: nil, Error: errors.New("failed to make request")},
 			expectedErr: errors.New("failed to make request"),
-			url:         "bad url",
+			url:         "fakeUrl2",
 		},
 	}
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-
 			result, err := GetData(test.client, test.url)
 			if err != nil && test.expectedErr == nil {
 				t.Errorf("unexpected error: %s", err)
 			}
 			if err == nil && test.expectedErr != nil {
-				t.Errorf("expected error: %s but got nil", test.expectedErr)
+				t.Errorf("error expected: %s but got nil", test.expectedErr)
 			}
 			if err != nil && test.expectedErr != nil && err.Error() != test.expectedErr.Error() {
 				t.Errorf("expected error: %s but got: %s", test.expectedErr, err)
 			}
-			if !reflect.DeepEqual(result, test.expected) {
-				t.Errorf("expected: %+v but got: %+v", test.expected, result)
+			if diff := cmp.Diff(result, test.expected); diff != "" {
+				t.Errorf("expected: %+v but got:\n %+v", test.expected, result)
 			}
 		})
 	}
