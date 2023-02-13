@@ -330,7 +330,7 @@ func TestGroupPersonsByFirstLetter(t *testing.T) {
 		t.Run(test.name, func(t *testing.T) {
 			actual := GroupPersonsByFirstLetter(test.input)
 			if diff := cmp.Diff(actual, test.expected); diff != "" {
-				t.Errorf("TestedDeleteDuplicates() does not meet expectations, "+
+				t.Errorf("TestedGroupPersonByFirstLetter() does not meet expectations, "+
 					"\nactual=%#v, \nexpected=%#v, \nDIFF: %v", actual, test.expected, diff)
 			}
 		})

@@ -94,7 +94,7 @@ func TestReadAllRecords(t *testing.T) {
 				"https://randomapi.com/api/6de6abfedb24f889e0b5f675edc50deb?fmt=prettyjson&sole")
 
 			if diff := cmp.Diff(len(actual), test.numberInserted); diff != "" {
-				t.Errorf("TestedDeleteDuplicates() does not meet expectations, "+
+				t.Errorf("TestedReadAllRecords() does not meet expectations, "+
 					"\nactual=%#v, \nexpected=%#v, \nDIFF: %v", actual, test.numberInserted, diff)
 			}
 		})
