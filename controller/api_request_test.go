@@ -64,3 +64,39 @@ func TestGetData(t *testing.T) {
 		})
 	}
 }
+
+func TestReadAllRecords(t *testing.T) {
+	testCases := []struct {
+		name           string
+		numberInserted int
+	}{
+		{
+			name:           "Test case 100 records",
+			numberInserted: 100,
+		},
+		{
+			name:           "Test case 750 records",
+			numberInserted: 750,
+		},
+		{
+			name:           "Test case 215 records",
+			numberInserted: 215,
+		},
+		{
+			name:           "Test case 5 records",
+			numberInserted: 5,
+		},
+	}
+	for _, test := range testCases {
+		t.Run(test.name, func(t *testing.T) {
+			client := &RealClient{}
+			actual, _ := ReadAllRecords(client, test.numberInserted,
+				"https://randomapi.com/api/6de6abfedb24f889e0b5f675edc50deb?fmt=prettyjson&sole")
+
+			if diff := cmp.Diff(len(actual), test.numberInserted); diff != "" {
+				t.Errorf("TestedDeleteDuplicates() does not meet expectations, "+
+					"\nactual=%#v, \nexpected=%#v, \nDIFF: %v", actual, test.numberInserted, diff)
+			}
+		})
+	}
+}
