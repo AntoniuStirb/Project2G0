@@ -10,7 +10,7 @@ import (
 )
 
 func TestWriteJsonFiles(t *testing.T) {
-	dirName := "testdir"
+	dirName := "testdata"
 
 	testData := []models.PersonInfo{
 		{
