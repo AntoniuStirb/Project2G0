@@ -89,7 +89,7 @@ func TestReadAllRecords(t *testing.T) {
 	}
 	for _, test := range testCases {
 		t.Run(test.name, func(t *testing.T) {
-			client := &RealClient{}
+			client := http.DefaultClient
 			actual, _ := ReadAllRecords(client, test.numberInserted,
 				"https://randomapi.com/api/6de6abfedb24f889e0b5f675edc50deb?fmt=prettyjson&sole")
 

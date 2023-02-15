@@ -4,16 +4,8 @@ import (
 	"Project2Go/models"
 	"encoding/json"
 	"io"
-	"net/http"
+	"log"
 )
-
-// RealClient is the implementation of Client that uses the real http.Get
-type RealClient struct{}
-
-// Get implements the Client interface
-func (c *RealClient) Get(url string) (*http.Response, error) {
-	return http.Get(url)
-}
 
 // GetData function makes an HTTP GET request to the specified URL using the provided client.
 // If the request is successful, the response body is read and unmarshalled into a
@@ -24,13 +16,18 @@ func GetData(client models.Client, url string) ([]models.Person, error) {
 		return nil, err
 	}
 	body, err := io.ReadAll(resp.Body)
+	resp.Body.Close()
+	if resp.StatusCode > 299 {
+		log.Printf("Response failed with status code: %d and \nbody: %s\n", resp.StatusCode, body)
+		return nil, nil
+	}
 	if err != nil {
 		return nil, err
 	}
-	err = resp.Body.Close()
-	if err != nil {
-		return nil, err
-	}
+	//not necessarry to treat the error when closing
+	//if err != nil {
+	//	return nil, err
+	//}
 
 	var result models.Response
 	err = json.Unmarshal(body, &result)
