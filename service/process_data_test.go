@@ -93,11 +93,16 @@ func TestDeleteDuplicates(t *testing.T) {
 		},
 		{
 			name:     "Test case 2 == Empty input",
+			input:    nil,
+			expected: nil,
+		},
+		{
+			name:     "Test case 3 == Empty slice",
 			input:    []models.Person{},
 			expected: nil,
 		},
 		{
-			name: "Test case 3 == All records identical",
+			name: "Test case 4 == All records identical",
 			input: []models.Person{
 				{
 					First:   "Ocie",

@@ -124,26 +124,11 @@ func TestReadAllRecords(t *testing.T) {
 			numberOfRecordsNeeded: 5,
 			url:                   "fakeUrl2",
 		},
-		//{
-		//	name:           "Test case 750 records",
-		//	numberInserted: 750,
-		//},
-		//{
-		//	name:           "Test case 215 records",
-		//	numberInserted: 215,
-		//},
-		//{
-		//	name:           "Test case 5 records",
-		//	numberInserted: 5,
-		//},
 	}
 	for _, test := range testCases {
 		t.Run(test.name, func(t *testing.T) {
 			actual, _ := ReadAllRecords(test.client, test.numberOfRecordsNeeded,
 				test.url)
-			//if err != nil {
-			//	fmt.Println(err)
-			//}
 			if diff := cmp.Diff(len(actual), test.numberOfRecordsNeeded); diff != "" {
 				t.Errorf("TestedReadAllRecords() does not meet expectations, "+
 					"\nactual=%#v, \nexpected=%#v, \nDIFF: %v", actual, test.numberOfRecordsNeeded, diff)
