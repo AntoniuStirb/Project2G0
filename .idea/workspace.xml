@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="436e2455-2a59-4ee7-b654-d2fffed47175" name="Changes" comment="final version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/api_request.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/api_request.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/api_request_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/api_request_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,41 +32,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultGoTemplateProperty": "Go File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "D:/GO INTERNSHIP/Project2G0",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "settings.editor.selected.configurable": "go"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/GO INTERNSHIP/Project2G0&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;go&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Go Build.go build main.go">
-    <configuration name="go build Project2Go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="Project2G0" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="Project2Go" />
-      <directory value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="Project2G0" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <package value="Project2Go" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/main.go" />
-      <method v="2" />
-    </configuration>
+}</component>
+  <component name="RunManager" selected="Go Test.TestReadAllRecords/Test_case_5_records in Project2Go/controller">
     <configuration name="TestGetData in Project2Go/controller (1)" type="GoTestRunConfiguration" factoryName="Go Test" nameIsGenerated="true">
       <module name="Project2G0" />
       <working_directory value="$PROJECT_DIR$/controller" />
@@ -81,31 +62,7 @@
       <pattern value="^\QTestGetData\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestGetData in Project2Go/controller (2)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="Project2G0" />
-      <working_directory value="$PROJECT_DIR$/controller" />
-      <root_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="Project2Go/controller" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <pattern value="^\QTestGetData\E$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestGetData in Project2Go/controller" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="Project2G0" />
-      <working_directory value="$PROJECT_DIR$/controller" />
-      <root_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="Project2Go/controller" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <pattern value="^\QTestGetData\E$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestReadAllRecords in Project2Go/controller" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestReadAllRecords in Project2Go/controller (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="Project2G0" />
       <working_directory value="$PROJECT_DIR$/controller" />
       <root_directory value="$PROJECT_DIR$" />
@@ -117,13 +74,61 @@
       <pattern value="^\QTestReadAllRecords\E$" />
       <method v="2" />
     </configuration>
+    <configuration name="TestReadAllRecords/Test_case_0_records in Project2Go/controller" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="Project2G0" />
+      <working_directory value="$PROJECT_DIR$/controller" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="Project2Go/controller" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestReadAllRecords\E$/^\QTest_case_0_records\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestReadAllRecords/Test_case_4_records in Project2Go/controller" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="Project2G0" />
+      <working_directory value="$PROJECT_DIR$/controller" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="Project2Go/controller" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestReadAllRecords\E$/^\QTest_case_4_records\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestReadAllRecords/Test_case_5_records in Project2Go/controller" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="Project2G0" />
+      <working_directory value="$PROJECT_DIR$/controller" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="Project2Go/controller" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestReadAllRecords\E$/^\QTest_case_5_records\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestReadAllRecords/Test_case_7_records in Project2Go/controller" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="Project2G0" />
+      <working_directory value="$PROJECT_DIR$/controller" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="Project2Go/controller" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestReadAllRecords\E$/^\QTest_case_7_records\E$" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build main.go" />
-        <item itemvalue="Go Test.TestReadAllRecords in Project2Go/controller" />
-        <item itemvalue="Go Test.TestGetData in Project2Go/controller (2)" />
-        <item itemvalue="Go Test.TestGetData in Project2Go/controller" />
-        <item itemvalue="Go Build.go build Project2Go" />
+        <item itemvalue="Go Test.TestReadAllRecords/Test_case_5_records in Project2Go/controller" />
+        <item itemvalue="Go Test.TestReadAllRecords in Project2Go/controller (1)" />
+        <item itemvalue="Go Test.TestReadAllRecords/Test_case_4_records in Project2Go/controller" />
+        <item itemvalue="Go Test.TestReadAllRecords/Test_case_0_records in Project2Go/controller" />
+        <item itemvalue="Go Test.TestReadAllRecords/Test_case_7_records in Project2Go/controller" />
       </list>
     </recent_temporary>
   </component>

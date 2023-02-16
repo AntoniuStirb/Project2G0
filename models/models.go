@@ -3,22 +3,22 @@ package models
 import "net/http"
 
 type Person struct {
-	First   string
-	Last    string
-	Email   string
-	Address string
-	Created string
-	Balance string
+	First   string `json:"first"`
+	Last    string `json:"last"`
+	Email   string `json:"email"`
+	Address string `json:"address"`
+	Created string `json:"created"`
+	Balance string `json:"balance"`
 }
 
 type Response struct {
-	Results []Person
+	Results []Person `json:"results"`
 }
 
 type PersonInfo struct {
-	FirstLetter  string
+	FirstLetter  string `json:"index"`
 	Persons      []Person
-	TotalRecords int
+	TotalRecords int `json:"total_records"`
 }
 
 type Client interface {

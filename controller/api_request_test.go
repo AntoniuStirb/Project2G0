@@ -66,36 +66,87 @@ func TestGetData(t *testing.T) {
 }
 
 func TestReadAllRecords(t *testing.T) {
+
+	fakeResponse1 := &http.Response{
+		StatusCode: http.StatusOK,
+		Body: io.NopCloser(strings.NewReader(`{"Results": [{"First": "Stirb", "Last": "Antoniu", "Email": 
+			"stirbantoniu@mail", "Address": "123 str", "Created": "feb2023", "Balance": "100"},{"First": "Stirb", "Last": "Antoniu", "Email": 
+			"stirbantoniu@mail", "Address": "123 str", "Created": "feb2023", "Balance": "100"},{"First": "Stirb", "Last": "Antoniu", "Email": 
+			"stirbantoniu@mail", "Address": "123 str", "Created": "feb2023", "Balance": "100"},{"First": "Stirb", "Last": "Antoniu", "Email": 
+			"stirbantoniu@mail", "Address": "123 str", "Created": "feb2023", "Balance": "100"},{"First": "Stirb", "Last": "Antoniu", "Email": 
+			"stirbantoniu@mail", "Address": "123 str", "Created": "feb2023", "Balance": "100"},{"First": "Stirb", "Last": "Antoniu", "Email": 
+			"stirbantoniu@mail", "Address": "123 str", "Created": "feb2023", "Balance": "100"}]}`)),
+	}
+
+	fakeResponse2 := &http.Response{
+		StatusCode: http.StatusOK,
+		Body: io.NopCloser(strings.NewReader(`{"Results": [{"First": "Stirb", "Last": "Antoniu", "Email": 
+			"stirbantoniu@mail", "Address": "123 str", "Created": "feb2023", "Balance": "100"},{"First": "Stirb", "Last": "Antoniu", "Email": 
+			"stirbantoniu@mail", "Address": "123 str", "Created": "feb2023", "Balance": "100"},{"First": "Stirb", "Last": "Antoniu", "Email": 
+			"stirbantoniu@mail", "Address": "123 str", "Created": "feb2023", "Balance": "100"},{"First": "Stirb", "Last": "Antoniu", "Email": 
+			"stirbantoniu@mail", "Address": "123 str", "Created": "feb2023", "Balance": "100"},{"First": "Stirb", "Last": "Antoniu", "Email": 
+			"stirbantoniu@mail", "Address": "123 str", "Created": "feb2023", "Balance": "100"},{"First": "Stirb", "Last": "Antoniu", "Email": 
+			"stirbantoniu@mail", "Address": "123 str", "Created": "feb2023", "Balance": "100"}]}`)),
+	}
+
+	fakeResponse3 := &http.Response{
+		StatusCode: http.StatusOK,
+		Body: io.NopCloser(strings.NewReader(`{"Results": [{"First": "Stirb", "Last": "Antoniu", "Email": 
+			"stirbantoniu@mail", "Address": "123 str", "Created": "feb2023", "Balance": "100"},{"First": "Stirb", "Last": "Antoniu", "Email": 
+			"stirbantoniu@mail", "Address": "123 str", "Created": "feb2023", "Balance": "100"},{"First": "Stirb", "Last": "Antoniu", "Email": 
+			"stirbantoniu@mail", "Address": "123 str", "Created": "feb2023", "Balance": "100"},{"First": "Stirb", "Last": "Antoniu", "Email": 
+			"stirbantoniu@mail", "Address": "123 str", "Created": "feb2023", "Balance": "100"},{"First": "Stirb", "Last": "Antoniu", "Email": 
+			"stirbantoniu@mail", "Address": "123 str", "Created": "feb2023", "Balance": "100"},{"First": "Stirb", "Last": "Antoniu", "Email": 
+			"stirbantoniu@mail", "Address": "123 str", "Created": "feb2023", "Balance": "100"}]}`)),
+	}
+
 	testCases := []struct {
-		name           string
-		numberInserted int
+		name                  string
+		client                models.Client
+		numberOfRecordsNeeded int
+		url                   string
 	}{
 		{
-			name:           "Test case 100 records",
-			numberInserted: 100,
+			name:                  "Test case 0 records",
+			client:                &FakeClient{Response: fakeResponse1, Error: nil},
+			numberOfRecordsNeeded: 0,
+			url:                   "fakeUrl0",
 		},
 		{
-			name:           "Test case 750 records",
-			numberInserted: 750,
+			name:                  "Test case 4 records",
+			client:                &FakeClient{Response: fakeResponse2, Error: nil},
+			numberOfRecordsNeeded: 4,
+			url:                   "fakeUrl1",
 		},
 		{
-			name:           "Test case 215 records",
-			numberInserted: 215,
+			name:                  "Test case 5 records",
+			client:                &FakeClient{Response: fakeResponse3, Error: nil},
+			numberOfRecordsNeeded: 5,
+			url:                   "fakeUrl2",
 		},
-		{
-			name:           "Test case 5 records",
-			numberInserted: 5,
-		},
+		//{
+		//	name:           "Test case 750 records",
+		//	numberInserted: 750,
+		//},
+		//{
+		//	name:           "Test case 215 records",
+		//	numberInserted: 215,
+		//},
+		//{
+		//	name:           "Test case 5 records",
+		//	numberInserted: 5,
+		//},
 	}
 	for _, test := range testCases {
 		t.Run(test.name, func(t *testing.T) {
-			client := http.DefaultClient
-			actual, _ := ReadAllRecords(client, test.numberInserted,
-				"https://randomapi.com/api/6de6abfedb24f889e0b5f675edc50deb?fmt=prettyjson&sole")
-
-			if diff := cmp.Diff(len(actual), test.numberInserted); diff != "" {
+			actual, _ := ReadAllRecords(test.client, test.numberOfRecordsNeeded,
+				test.url)
+			//if err != nil {
+			//	fmt.Println(err)
+			//}
+			if diff := cmp.Diff(len(actual), test.numberOfRecordsNeeded); diff != "" {
 				t.Errorf("TestedReadAllRecords() does not meet expectations, "+
-					"\nactual=%#v, \nexpected=%#v, \nDIFF: %v", actual, test.numberInserted, diff)
+					"\nactual=%#v, \nexpected=%#v, \nDIFF: %v", actual, test.numberOfRecordsNeeded, diff)
 			}
 		})
 	}
